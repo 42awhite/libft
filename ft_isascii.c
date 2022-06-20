@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,23 +9,24 @@
 /*   Updated: 2022/06/15 13:35:06 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isalpha(int c)
+
+int	ft_isascii(int c)
 {
-	if ((c >= 'A' && c <= 'Z' ) || (c >= 'a' && c <= 'z'))
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);
 }
 /*
-#include <unistd.h>
 #include <ctype.h>
+#include <unistd.h>
 int main(void)
 {
-	if (isalpha('a') == ft_isalpha('a'))
+	if (isascii('a') == ft_isascii('a'))
 		write(1, "OK\n", 3);
-	if (isalpha('3') == ft_isalpha('3'))
+	if (isascii('3') == ft_isascii('3'))
 		write(1, "OK\n", 3);
-	if (isalpha(' ') == ft_isalpha(' '))
+	if (isascii(' ') == ft_isascii(' '))
 		write(1, "OK\n", 3);
 }
 */

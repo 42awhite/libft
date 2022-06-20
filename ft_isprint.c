@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,9 +9,10 @@
 /*   Updated: 2022/06/15 13:35:06 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isalpha(int c)
+
+int	ft_isprint(int c)
 {
-	if ((c >= 'A' && c <= 'Z' ) || (c >= 'a' && c <= 'z'))
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);
@@ -19,13 +20,15 @@ int	ft_isalpha(int c)
 /*
 #include <unistd.h>
 #include <ctype.h>
-int main(void)
+int	main(void)
 {
-	if (isalpha('a') == ft_isalpha('a'))
+	if (isprint('a') == ft_isprint('a'))
 		write(1, "OK\n", 3);
-	if (isalpha('3') == ft_isalpha('3'))
+
+	if (isprint('3') == ft_isprint('3'))
 		write(1, "OK\n", 3);
-	if (isalpha(' ') == ft_isalpha(' '))
+
+	if (isprint(' ') == ft_isprint(' '))
 		write(1, "OK\n", 3);
 }
 */

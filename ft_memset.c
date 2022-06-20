@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,23 +9,34 @@
 /*   Updated: 2022/06/15 13:35:06 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isalpha(int c)
+
+void *ft_memset(void *b, int c, size_t len)
 {
-	if ((c >= 'A' && c <= 'Z' ) || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	unsigned char *p;
+
+	p = b;
+	while (len > 0)
+	{
+		*p = (unsigned char) c;
+		p++;
+		len--;
+	}
+	return (b);
 }
-/*
-#include <unistd.h>
-#include <ctype.h>
-int main(void)
+
+#include <string.h>
+#include <stdio.h>
+
+int	main(void)
 {
-	if (isalpha('a') == ft_isalpha('a'))
-		write(1, "OK\n", 3);
-	if (isalpha('3') == ft_isalpha('3'))
-		write(1, "OK\n", 3);
-	if (isalpha(' ') == ft_isalpha(' '))
-		write(1, "OK\n", 3);
+char str[50];
+
+   strcpy(str,"hola esto pretende ser una prueba pero no compila :C");
+   puts(str);
+
+  ft_memset (str,'$',7);
+   puts(str);
+   
+   return(0);
 }
-*/
+

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,23 +9,26 @@
 /*   Updated: 2022/06/15 13:35:06 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isalpha(int c)
+
+int	ft_strlen(char *str)
 {
-	if ((c >= 'A' && c <= 'Z' ) || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	int c;
+	
+	c = 0;
+	while (str[c] != '\0')
+		c++;
+	return (c);
 }
+
 /*
 #include <unistd.h>
-#include <ctype.h>
-int main(void)
+#include <string.h>
+int	main(void)
 {
-	if (isalpha('a') == ft_isalpha('a'))
+	if (strlen("hola") == ft_strlen("hola"))
 		write(1, "OK\n", 3);
-	if (isalpha('3') == ft_isalpha('3'))
-		write(1, "OK\n", 3);
-	if (isalpha(' ') == ft_isalpha(' '))
+
+	if (strlen("12345") == ft_strlen("12345"))
 		write(1, "OK\n", 3);
 }
 */
