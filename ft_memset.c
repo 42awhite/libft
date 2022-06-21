@@ -6,37 +6,37 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 12:56:11 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/06/15 13:35:06 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:14:45 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 void *ft_memset(void *b, int c, size_t len)
 {
-	unsigned char *p;
+	size_t q;
+	unsigned char *str;
 
-	p = b;
-	while (len > 0)
+	str = b;
+	q = 0;
+
+	if (str != 0)
 	{
-		*p = (unsigned char) c;
-		p++;
-		len--;
+		while (q < len)
+		{
+			str[q] = (unsigned char) c;
+			q++;
+		}
 	}
-	return (b);
+	return (str);
 }
+
 
 #include <string.h>
 #include <stdio.h>
 
-int	main(void)
+int	main (void)
 {
-char str[50];
-
-   strcpy(str,"hola esto pretende ser una prueba pero no compila :C");
-   puts(str);
-
-  ft_memset (str,'$',7);
-   puts(str);
-   
-   return(0);
+	char	str[] = "hola caracola";
+	
+	printf("%s", ft_memset(str, '*', 4));
 }
-
