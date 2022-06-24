@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 12:56:11 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/06/22 16:15:56 by ablanco-         ###   ########.fr       */
+/*   Created: 2022/06/22 12:23:28 by ablanco-          #+#    #+#             */
+/*   Updated: 2022/06/22 16:49:00 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-void *ft_memset(void *b, int c, size_t len)
-{
-	size_t q;
-	unsigned char *str;
 
-	str = b;
+void *ft_bzero(void *s, size_t n)
+{
+	size_t	q;
+	char 	*str;
+
+	str = s;
 	q = 0;
-	while (q < len)
+
+
+	while (q < n)
 	{
-		str[q] = (unsigned char) c;
+		str[q] = '\0';
 		q++;
 	}
 	return (str);
 }
-
-
+/*
 #include <string.h>
 #include <stdio.h>
 
 int	main (void)
 {
 	char	str[] = "hola caracola";
-	
-	printf("%s", ft_memset(str, '*', 4));
+
+	printf("%s", ft_bzero(str, 4));
 }
+*/

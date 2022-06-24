@@ -1,38 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 12:56:11 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/06/22 16:15:56 by ablanco-         ###   ########.fr       */
+/*   Created: 2022/06/22 15:33:39 by ablanco-          #+#    #+#             */
+/*   Updated: 2022/06/22 16:11:00 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-void *ft_memset(void *b, int c, size_t len)
+
+void *ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t q;
-	unsigned char *str;
+	char *strd;
+	char *strs;
 
-	str = b;
+	strd = dst;
+	strs = (char *)src;
+
 	q = 0;
-	while (q < len)
+	if (strd == 0 && strs == 0)
 	{
-		str[q] = (unsigned char) c;
+		return (NULL);
+	}
+	while (q < n)
+	{
+		strd[q] = strs[q];
 		q++;
 	}
-	return (str);
+	return(strd);
 }
-
-
+/*
 #include <string.h>
 #include <stdio.h>
 
 int	main (void)
 {
 	char	str[] = "hola caracola";
-	
-	printf("%s", ft_memset(str, '*', 4));
-}
+	char	str2[] = "Vamos a ver si funciona";
+
+	printf("%s\n", ft_memcpy(str, str2, 4));
+	printf("%s", memcpy(str, str2, 4));
+}*/
+
