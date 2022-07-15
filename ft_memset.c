@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 12:56:11 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/06/22 16:15:56 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/07/11 15:45:45 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void *ft_memset(void *b, int c, size_t len)
 	return (str);
 }
 
-
+/*
 #include <string.h>
 #include <stdio.h>
 
@@ -36,3 +36,4 @@ int	main (void)
 	
 	printf("%s", ft_memset(str, '*', 4));
 }
+*/

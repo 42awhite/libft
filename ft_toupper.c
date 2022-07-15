@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 12:56:11 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/07/13 18:19:13 by ablanco-         ###   ########.fr       */
+/*   Created: 2022/07/14 16:51:42 by ablanco-          #+#    #+#             */
+/*   Updated: 2022/07/14 17:10:33 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
-size_t	ft_strlen(const char *str)
+
+int ft_toupper(int c)
 {
-	size_t c;
-	
-	c = 0;
-	while (str[c] != '\0')
-		c++;
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
 	return (c);
 }
-
-/*
-#include <unistd.h>
-#include <string.h>
-int	main(void)
-{
-	if (strlen("hola") == ft_strlen("hola"))
-		write(1, "OK\n", 3);
-
-	if (strlen("12345") == ft_strlen("12345"))
-		write(1, "OK\n", 3);
-}
-*/
