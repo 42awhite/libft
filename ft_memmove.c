@@ -17,25 +17,16 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t cont;
-	char *strd;
-	char *strs;
+	size_t	cont;
 
-	strd = (char *)dst;
-	strs = (char *)src;
-
-	
-//	if (!strd || !strs)
-//		return (NULL);
 	if (dst == src)
 		return (dst);
-
 	if (dst < src)
 	{
 		cont = 0;
 		while (cont < len)
 		{
-			strd[cont] = strs[cont];
+			((char *)dst)[cont] = ((char *)src)[cont];
 			cont++;
 		}
 	}
@@ -44,25 +35,25 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		cont = len;
 		while (cont > 0)
 		{
-			strd[cont - 1] = strs[cont - 1];
+			((char *)dst)[cont - 1] = ((char *)src)[cont - 1];
 			cont--;
 		}
 	}
-
 	return (dst);
 }
 
+/*
+int	main(void)
+{
+	char	dest[] = "oldstring";
+	char	dest1[] = "oldstring";
+	char	src[] = "***newstring***";
+	char	src1[] = "***newstring***";
+	
+	printf("Primero %s\n", ft_memmove(src, src + 3, 9));
+	printf("After memmove dest = %s, src = %s\n", dest, src);
 
-//int	main(void)
-//{
-////	char	dest[] = "oldstring";
-////	char	dest1[] = "oldstring";
-//	char	src[] = "***newstring***";
-//	char	src1[] = "***newstring***";
-//	
-//	printf("Primero %s\n", ft_memmove(src, src + 3, 9));
-////	printf("After memmove dest = %s, src = %s\n", dest, src);
-//
-//	printf("Segundo %s\n", memmove(src1, src1 + 3, 9));
-////	printf("After memmove dest = %s, src = %s\n", dest, src);
-//}
+	printf("Segundo %s\n", memmove(src1, src1 + 3, 9));
+	printf("After memmove dest = %s, src = %s\n", dest, src);
+}
+*/

@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-void *ft_memset(void *b, int c, size_t len)
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t q;
-	unsigned char *str;
+	size_t			q;
+	unsigned char	*str;
 
 	str = b;
 	q = 0;

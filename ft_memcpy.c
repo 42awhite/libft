@@ -12,15 +12,14 @@
 
 #include <stddef.h>
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t q;
-	char *strd;
-	char *strs;
+	size_t	q;
+	char	*strd;
+	char	*strs;
 
 	strd = dst;
 	strs = (char *)src;
-
 	q = 0;
 	if (strd == 0 && strs == 0)
 	{
@@ -31,7 +30,7 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 		strd[q] = strs[q];
 		q++;
 	}
-	return(strd);
+	return (strd);
 }
 /*
 #include <string.h>
@@ -45,4 +44,3 @@ int	main (void)
 	printf("%s\n", ft_memcpy(str, str2, 4));
 	printf("%s", memcpy(str, str2, 4));
 }*/
-

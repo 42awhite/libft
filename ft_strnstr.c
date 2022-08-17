@@ -14,20 +14,19 @@
 #include <stdio.h>
 #include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t cont;
-	size_t q;
-	
+	size_t	cont;
+	size_t	q;
+
 	if (!*needle)
 		return ((char *)haystack);
-
 	cont = 0;
 	while (haystack[cont])
 	{
 		q = 0;
-		while (haystack[cont + q] && needle[q] 
-				&& haystack[cont + q] == needle[q] && cont + q < len)
+		while (haystack[cont + q] && needle[q]
+			&& haystack[cont + q] == needle[q] && cont + q < len)
 			q++;
 		if (!needle[q])
 			return (&((char *)haystack)[cont]);

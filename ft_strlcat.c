@@ -15,7 +15,7 @@
 #include <string.h>
 #include <stdio.h>
 
-size_t ft_strlcat(char *dst,  const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	cont;
 	size_t	long_dst;
@@ -23,9 +23,7 @@ size_t ft_strlcat(char *dst,  const char *src, size_t size)
 
 	long_src = ft_strlen(src);
 	long_dst = ft_strlen((const char *)dst);
-
 	cont = 0;
-
 	if (size < long_dst)
 		return (long_src + size);
 	if (!size)
@@ -39,9 +37,10 @@ size_t ft_strlcat(char *dst,  const char *src, size_t size)
 		}
 		dst[long_dst + cont] = '\0';
 	}
-	return(long_dst + long_src);
+	return (long_dst + long_src);
 }
 
+/*
 int	main (void)
 {
 	char	dest[100] = "Pablito";
@@ -56,4 +55,4 @@ int	main (void)
 
 	return (0);
 }
-
+*/
