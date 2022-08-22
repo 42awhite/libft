@@ -11,14 +11,16 @@
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-static int ft_poschar(char *c, char *set)
+static int ft_poschar(char c, char const *set)
 {
 	size_t q;
 
+	q = 0;
 	while(set[q])
 	{
-		if (c[q] == set[q])
+		if (set[q] == c)
 			return (1);
 		q++;
 	}
@@ -36,14 +38,14 @@ char *ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (s1[start] && ft_poschar(s1[start], set))
 		start++;
-	end = ft_strlen(str);
+	end = ft_strlen(s1);
 	while (end > start && ft_poschar(s1[end - 1], set))
 		end--;
-	str = malloc(sizeof(char) * (end - start + 1));
+	str = malloc(sizeof(*s1) * (end - start + 1));
 	if (!str)
 		return (0);
 	cont = 0;
-	while (star < end)
+	while (start < end)
 	{
 		str[cont] = s1[start];
 		cont ++;
@@ -51,7 +53,6 @@ char *ft_strtrim(char const *s1, char const *set)
 	}
 	str[cont] = '\0';
 	return (str);
-
 }
 
 
