@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 16:52:41 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/08/26 17:32:46 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/08/26 18:47:36 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -47,6 +47,12 @@ static int ft_nchar(const char *s2, char c)
 	return (cont);
 }
 
+static char ft_delate(const char *s3, char c)
+{
+
+}
+
+/*
 char **ft_split(char const *s, char c)
 {
 char **split;
@@ -58,10 +64,13 @@ nw = ft_nword(s, c);
 split = malloc(sizeof (char *) * (nw + 1));
 
 cont = 0;
+
 while (cont <= nw)
 {
 	split[cont] = malloc(sizeof (char) * (ft_nchar(s, c) + 1));
 	co = 0;
+	if (s[co] == c)
+		co++;
 	while (s[co] != c)
 	{
 		split[cont][co] = s[co];
@@ -71,7 +80,7 @@ while (cont <= nw)
 }
 return (split);
 }
-
+*/
 int main(void)
 {
 	char s1[] = "hol que    tal         me muero  ";
