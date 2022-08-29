@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 16:52:41 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/08/29 20:42:32 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/08/29 22:31:54 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,24 +17,22 @@
 static size_t ft_nword(const char *s1, char c)
 {
 	size_t cont;
-	size_t ns;
+	size_t nw;
 	
-	ns = 0;
+	nw = 0;
 	cont = 0;
-	while(s1[cont] != '\0')
+	while(s1 && s1[cont])
 		{
 			if (s1[cont] != c)
-				cont++;
-			else if (s1[cont + 1] == c || s1[cont + 1] == '\0')
-				cont++;
-			else
 			{
-				ns++;
-				cont++;
+				nw++;
+				while (s1[cont] != c && s1[cont])
+					cont++;
 			}
+			else
+				cont++;
 		}
-	ns++;
-	return(ns);
+	return(nw);
 }
 
 static size_t ft_nchar(const char *s2, char c, int i)
@@ -50,7 +48,6 @@ static size_t ft_nchar(const char *s2, char c, int i)
 	return (cont);
 }
 
-
 char **ft_split(char const *s, char c)
 {
 char **split;
@@ -59,11 +56,14 @@ size_t cont;
 size_t co;
 size_t q;
 
+
 nw = ft_nword(s, c);
 split = malloc(sizeof (char *) * (nw + 1));
 
 cont = 0;
 q = 0;
+if (!split)
+	return (NULL);
 while (cont <= nw)
 {	
 	while (s[q] == c)
