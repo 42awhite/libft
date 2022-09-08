@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 16:52:41 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/08/29 22:31:54 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/08 21:17:29 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -64,7 +64,7 @@ cont = 0;
 q = 0;
 if (!split)
 	return (NULL);
-while (cont <= nw)
+while (cont < nw)
 {	
 	while (s[q] == c)
 		q++;
@@ -73,22 +73,31 @@ while (cont <= nw)
 	q += co;
 	cont++;
 }
+
+split[cont] = NULL;
 return (split);
 }
 /*
 int main(void)
 {
-	char s1[] = "hol que    tal         me muero  ";
+	char s1[] = "   hol que    tal         me muero";
 	char c = ' ';
 	char **co;
 	int cont;
 
 	co = ft_split(s1, c);
 	cont = 0;
-	while (ft_nword(s1, c) >= cont)
+	while (co[cont] != NULL)
 	{
-		printf ("%s\n", co[cont]);
+		printf ("|%s|\n", co[cont]);
 		cont++;
 	}
+//	printf ("%s\n", NULL);
+//	cont = 0;
+//	while (ft_nword(s1, c) >= cont)
+//	{
+//		printf ("|%s|\n", co[cont]);
+//		cont++;
+//	}
 }
 */
