@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 16:29:28 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/11 20:55:10 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:11:27 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,7 +20,12 @@ static int ft_nchar(int n)
 	int cont;
 
 	cont = 1;
-	while (n >= 9)
+	if (n < 0)
+	{
+		n *= -1;
+		cont++;
+	}
+	while (n >= 10)
 	{
 		n /= 10;
 		cont ++;
@@ -28,32 +33,38 @@ static int ft_nchar(int n)
 	return (cont);
 }
 
-/*
 char *ft_itoa(int n)
 {
-	char number;
-	
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-	}
-	if (n <= 9)
-	{
-		number = n + 48;
-		write(1, &number, 1);
-	}
-	if (n >= 10)
-	{
-		ft_itoa(n / 10);
-		ft_itoa(n % 10);
-	}
-	return (&number);
-}
-*/
+	char		*itoa;
+	int 		nchar;
+	long int	number;
+	long int	number_cpy;
 
+	nchar = ft_nchar(n);
+	itoa = malloc(sizeof(char) * (nchar + 1));
+	if (n < 0)
+		number = -n;
+	else
+		number = n;
+	number_cpy = number;
+	itoa[nchar] = '\0';
+	while (nchar >= 0)
+	{
+		number = number_cpy % 10 + 48;
+		number_cpy /= 10;
+		nchar--;
+		itoa[nchar] = number;
+	}
+	if (n < 0)
+		itoa[0] = '-';
+	return (itoa);
+}
+
+
+/*
 int	main(void)
 {
-	printf("%d\n", ft_nchar(125));
-	printf("%d\n", ft_nchar(0));
+	printf("%s\n", ft_itoa(-125));
+	printf("%s\n", ft_itoa(0));
 }
+*/
