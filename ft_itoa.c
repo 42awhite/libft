@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 16:29:28 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/14 15:47:31 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:58:13 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -46,8 +46,11 @@ char *ft_itoa(int n)
 	if (!itoa)
 		return (0);
 		
-//	if (n == -2147483648)
-//		return ("-2147483648");
+	if (n == -2147483648)
+	{
+		ft_strlcpy(itoa, "-2147483648", nchar + 1);
+		return (itoa);
+	}
 
 	if (n < 0)
 		number = -n;
