@@ -6,17 +6,17 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 13:06:05 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/08/20 15:13:03 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:21:10 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include "stdlib.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *str;
-	size_t c;
-	size_t cont;
+	char	*str;
+	size_t	c;
+	size_t	cont;
 
 	if (!s)
 		return (0);
@@ -29,7 +29,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		if (c >= start && cont < len)
 		{
-			str[cont] =  s[c];
+			str[cont] = s[c];
 			cont++;
 		}
 	c++;

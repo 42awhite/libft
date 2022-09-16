@@ -6,25 +6,23 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 15:20:16 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/08/20 15:59:28 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:22:31 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include "stdlib.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *str;
-	size_t c;
-	size_t cont;
+	char	*str;
+	size_t	c;
+	size_t	cont;
 
 	if (!s1)
 		return (0);
-		
 	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (0);
-
 	c = 0;
 	cont = 0;
 	while (s1[c])
