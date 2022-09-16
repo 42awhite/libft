@@ -1,49 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 11:47:48 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/16 13:37:42 by ablanco-         ###   ########.fr       */
+/*   Created: 2022/09/16 11:58:04 by ablanco-          #+#    #+#             */
+/*   Updated: 2022/09/16 13:33:07 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
+
 /*
-char	ft_toupper_test(unsigned int pepe, char c)
+void	ft_toupper_test(unsigned int pepe, char *c)
 {
-	(void) pepe;
-	if (c >= 'a' && c <= 'z')
-		c = c - 32;
-	return (c);
+	while (c[pepe] >= 'a' && c[pepe] <= 'z')
+		c[pepe] = c[pepe] - 32;
 }
 */
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_striteri(char  *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	cont;
-	char			*punt;
 
-	punt = ft_calloc(1, sizeof(char) * (ft_strlen(s) + 1));
-	
 	cont = 0;
-	if (!punt || !s || !f)
-		return (NULL);
-	while(s[cont])
+	if (s > 0)
 	{
-		punt[cont] = f(cont, s[cont]);
-		cont++;
+		while(s[cont])
+		{
+			f(cont, &s[cont]);
+			cont++;
+		}
 	}
-	return (punt);
 }
 /*
 int main (void)
 {
 	char algo[] = "hola que tal";
-
-	printf("%s\n", ft_strmapi(algo, ft_toupper_test));
+	
+	printf("%s\n", ft_toupper_test(4, algo));
+	//printf("%s\n", ft_strmapi(algo, ft_toupper_test));
+	return (0);
 }
 */
