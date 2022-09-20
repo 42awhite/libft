@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 16:29:28 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/15 14:58:13 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/20 16:51:34 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -70,9 +70,10 @@ char *ft_itoa(int n)
 	return (itoa);
 }
 
-
+/*
 int	main(void)
 {
 	printf("%s\n", ft_itoa(-125));
 	printf("%s\n", ft_itoa(0));
 }
+*/

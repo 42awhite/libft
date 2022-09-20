@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/19 13:43:01 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/20 16:40:23 by ablanco-         ###   ########.fr       */
+/*   Created: 2022/09/20 15:34:09 by ablanco-          #+#    #+#             */
+/*   Updated: 2022/09/20 17:11:22 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include "stdlib.h"
-
-char	*ft_strdup(const char *s1)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	lon;
-	char	*cpy;
-	int		cont;
-
-	lon = ft_strlen(s1);
-	cpy = malloc(sizeof(char) * (lon + 1));
-	if (!cpy)
-		return (0);
-	cont = 0;
-	while (s1[cont])
-	{
-		cpy[cont] = s1[cont];
-		cont ++;
-	}
-	cpy[cont] = '\0';
-	return (cpy);
+	if (!lst && !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
+
+/*
+int	main(void)
+{
+	t_list	*node;
+	t_list	*lst;
+
+	node = ft_lstnew("hola");
+	ft_lstadd_front(&lst, node);
+	printf("%s\n", (char *)lst->content);
+	node = ft_lstnew("antes de hola");
+	ft_lstadd_front(&lst, node);
+	printf("%s\n", (char *)lst->content);
+	printf("%s\n", (char *)lst->next->content);
+}
+*/
