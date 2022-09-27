@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:47:48 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/16 13:37:42 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/27 18:12:17 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -27,11 +27,12 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	cont;
 	char			*punt;
 
-	punt = ft_calloc(1, sizeof(char) * (ft_strlen(s) + 1));
-	
-	cont = 0;
-	if (!punt || !s || !f)
+	if (!s || !f)
 		return (NULL);
+	punt = ft_calloc(1, sizeof(char) * (ft_strlen(s) + 1));
+	if (!punt)
+		return (NULL);
+	cont = 0;
 	while(s[cont])
 	{
 		punt[cont] = f(cont, s[cont]);

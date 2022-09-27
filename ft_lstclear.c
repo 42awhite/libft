@@ -1,35 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 15:34:09 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/27 18:54:27 by ablanco-         ###   ########.fr       */
+/*   Created: 2022/09/23 16:55:31 by ablanco-          #+#    #+#             */
+/*   Updated: 2022/09/27 18:59:13 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-void ft_lstadd_front(t_list **lst, t_list *new)
+
+void	ejemplo(void *c)
 {
-	if (!lst && !new)
+	//printf("%s\n", (char*)c);
+	c = "ANA";
+	//printf("%s\n", (char*)c);
+}
+
+
+void ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*aux;
+	t_list	*nxt;
+
+	if (!del || !*lst || !lst)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	aux = *lst;
+	while(aux)
+	{
+		nxt = aux -> next;
+		del(aux -> content);
+		free(aux);
+		aux = nxt;
+	}
+	*lst = NULL;
 }
 
 /*
 int	main(void)
 {
-	t_list	*node;
 	t_list	*lst;
-
-	node = ft_lstnew("hola");
+	t_list	*node;
+	
+	lst = NULL;
+	node = ft_lstnew("nodo nuevo");
+	node->next = NULL;
 	ft_lstadd_front(&lst, node);
-	printf("%s\n", (char *)lst->content);
-	node = ft_lstnew("antes de hola");
-	ft_lstadd_front(&lst, node);
-	printf("%s\n", (char *)lst->content);
-	printf("%s\n", (char *)lst->next->content);
+	ft_lstclear(&lst, ejemplo);
 }
 */

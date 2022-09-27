@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 16:52:41 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/08 21:17:29 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:52:26 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -70,6 +70,14 @@ while (cont < nw)
 		q++;
 	co = ft_nchar(s, c, q);
 	split[cont] = ft_substr(s, q, co);
+	if (split[cont] == NULL)
+	{
+		while (cont >= 0)
+		{
+		free(split[cont]);
+		cont--;
+		}
+	}
 	q += co;
 	cont++;
 }
