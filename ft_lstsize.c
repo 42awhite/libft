@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:34:40 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/22 16:36:10 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:35:39 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,7 +21,6 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->next;
 		cont++;
 	}
-
 	return (cont);
 }
 /*

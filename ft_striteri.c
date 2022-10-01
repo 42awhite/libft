@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 11:58:04 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/16 13:33:07 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:00:07 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -21,14 +21,14 @@ void	ft_toupper_test(unsigned int pepe, char *c)
 }
 */
 
-void	ft_striteri(char  *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	cont;
 
 	cont = 0;
 	if (s > 0)
 	{
-		while(s[cont])
+		while (s[cont])
 		{
 			f(cont, &s[cont]);
 			cont++;

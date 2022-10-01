@@ -6,29 +6,29 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:55:31 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/27 18:59:13 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:51:33 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 void	ejemplo(void *c)
 {
 	//printf("%s\n", (char*)c);
 	c = "ANA";
 	//printf("%s\n", (char*)c);
 }
+*/
 
-
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*aux;
 	t_list	*nxt;
 
-	if (!del || !*lst || !lst)
+	if (!del || !lst)
 		return ;
 	aux = *lst;
-	while(aux)
+	while (aux)
 	{
 		nxt = aux -> next;
 		del(aux -> content);

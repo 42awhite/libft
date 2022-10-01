@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 15:20:16 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/16 15:22:31 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/10/01 18:34:13 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -33,11 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	c = 0;
 	while (s2[c])
-	{
-		str[cont] = s2[c];
-		cont++;
-		c++;
-	}
+		str[cont++] = s2[c++];
 	str[cont] = '\0';
 	return (str);
 }

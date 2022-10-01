@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 16:07:15 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/07/14 17:39:11 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/10/01 18:11:03 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	long_dst;
 	size_t	long_src;
 
+	if (!dst && !size)
+		return ((size_t) NULL);
 	long_src = ft_strlen(src);
 	long_dst = ft_strlen((const char *)dst);
 	cont = 0;

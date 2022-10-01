@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:53:46 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/19 15:38:10 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/10/01 20:45:24 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-/*
+/**
 int	main(void)
 {
 	char	dest[] = "oldstring";
@@ -51,9 +51,9 @@ int	main(void)
 	char	src1[] = "***newstring***";
 	
 	printf("Primero %s\n", ft_memmove(src, src + 3, 9));
-	printf("After memmove dest = %s, src = %s\n", dest, src);
+	printf("After memmove dest = %s, src = %s\n", src, src + 3);
 
-	printf("Segundo %s\n", memmove(src1, src1 + 3, 9));
-	printf("After memmove dest = %s, src = %s\n", dest, src);
+//	printf("Segundo %s\n", memmove(src1, src1 + 3, 9));
+//	printf("After memmove dest = %s, src = %s\n", dest, src);
 }
 */

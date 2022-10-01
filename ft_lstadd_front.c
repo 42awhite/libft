@@ -6,11 +6,12 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:34:09 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/27 18:54:27 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:32:42 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-void ft_lstadd_front(t_list **lst, t_list *new)
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst && !new)
 		return ;

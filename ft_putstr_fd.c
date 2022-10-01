@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 16:01:22 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/19 16:17:43 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:02:24 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,9 +15,9 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	int		cont;
-	
+
 	if (s != '\0')
-		{
+	{
 		cont = 0;
 		while (s[cont])
 		{
@@ -25,5 +25,4 @@ void	ft_putstr_fd(char *s, int fd)
 			cont++;
 		}
 	}
-
 }

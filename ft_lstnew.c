@@ -6,12 +6,12 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 14:59:58 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/27 17:43:46 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:31:51 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*mem;
 

@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 16:29:28 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/20 16:51:34 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/29 17:19:58 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,9 +15,10 @@
 #include <string.h>
 #include <stdlib.h>
 
-static int ft_nchar(int n)
+static size_t	ft_nchar(long int n)
 {
-	int cont;
+	int	cont;
+
 	cont = 1;
 	if (n < 0 && n != -2147483648)
 	{
@@ -34,31 +35,22 @@ static int ft_nchar(int n)
 	return (cont);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char		*itoa;
-	int 		nchar;
+	int			nchar;
 	long int	number;
 	long int	number_cpy;
 
+	number = n;
 	nchar = ft_nchar(n);
-	itoa = malloc(sizeof(char) * (nchar + 1));
+	itoa = ft_calloc(sizeof(char), nchar + 1);
 	if (!itoa)
-		return (0);
-		
-	if (n == -2147483648)
-	{
-		ft_strlcpy(itoa, "-2147483648", nchar + 1);
-		return (itoa);
-	}
-
-	if (n < 0)
-		number = -n;
-	else
-		number = n;
+		return (NULL);
+	if (number < 0)
+		number *= -1;
 	number_cpy = number;
-	itoa[nchar] = '\0';
-	while (nchar >= 0)
+	while (nchar > 0)
 	{
 		number = number_cpy % 10 + 48;
 		number_cpy /= 10;
@@ -73,7 +65,7 @@ char *ft_itoa(int n)
 /*
 int	main(void)
 {
-	printf("%s\n", ft_itoa(-125));
-	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(156825));
+//	printf("%s\n", itoa(125));
 }
 */

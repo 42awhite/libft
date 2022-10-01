@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:47:12 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/09/23 13:34:19 by ablanco-         ###   ########.fr       */
+/*   Updated: 2022/09/29 18:46:28 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*recive;
+
+	if (!new)
+		return ;
 	if (!*lst)
-		*lst = new;
-	else
 	{
-		while ((*lst)-> next)
-			*lst = (*lst)-> next;
-		(*lst)-> next = new;
+		*lst = new;
+		return ;
 	}
+	recive = ft_lstlast(*lst);
+	recive->next = new;
 }
+
 /*
 int	main(void)
 {
