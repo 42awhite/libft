@@ -6,7 +6,7 @@
 /*   By: ablanco- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 16:13:37 by ablanco-          #+#    #+#             */
-/*   Updated: 2022/07/27 17:23:13 by ablanco-         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:42:43 by ablanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 int main(void)
 {
 	char str[] = "Intento procrastinar";
-	char str2[] = "Intento ñ";
+	char str2[] = "Intento procrastinar";
 
 	printf("%d\n", ft_strncmp(str, str2, 10));
 	printf("%d\n", strncmp(str, str2, 10));
